@@ -5,19 +5,19 @@ pipeline{
       parallel{
         stage('actions1'){
           steps{
-            sh 'actions1'
+            echo "actions1"
           }
         }
         stage('actions2'){
           steps{
-            sh 'actions2'
+            echo "actions2"
           }
         }
       }
     }
-    stage('codebuild'){
+    stage('version-check'){
     	steps{
-    		sh 'echo codebuild stage'
+    		echo "end of parallel job"
     	}
     }
   }
