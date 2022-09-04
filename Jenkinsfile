@@ -30,5 +30,10 @@ pipeline{
         sh 'cat /etc/passwd | grep jenkins'
       }
     }
+    stage('webhook-fix'){
+      steps{
+        echo "webhook fix"
+      }
+    }
   }
 }
