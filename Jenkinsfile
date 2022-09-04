@@ -1,6 +1,11 @@
 pipeline{
   agent any
   stages{
+    stage('git-clone'){
+     steps{
+      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubid', url: 'https://github.com/victoriababy45/team-parallel.git']]])
+     } 
+    }
     stage('actions1 and actions2'){
       parallel{
         stage('actions1'){
